@@ -11,6 +11,5 @@ import dev.four.entities.Doctor;
 @Component
 @Repository
 public interface DoctorRepository extends CrudRepository<Doctor, Integer> {
-	
-	List<Doctor> findByUsername(String username);	
+
 }

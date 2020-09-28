@@ -28,44 +28,17 @@ public class DoctorController {
 	@Autowired
 	DoctorService dserv;
 	
-	@RequestMapping(value = "/doctors", method = RequestMethod.POST)
-	public Doctor createDoctor(@RequestBody Doctor doctor) {
-		return this.dserv.createDoctor(doctor);
-	}
 	
-	@RequestMapping(value = "/doctors/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/doctors/{number}", method = RequestMethod.GET)
 	public Doctor getDoctorById(@PathVariable int id) {
-		return this.dserv.getDoctorById(id);
+		return this.dserv.getDoctorByNumber(id);
 	}
 	
-	/*@RequestMapping(value = "/doctors/{id}/appointments", method = RequestMethod.GET)
-	public List<Appointment> getAppointmentsByDoctor(@PathVariable int id) {
-		Doctor doctor = this.dserv.getDoctorById(id);
-		List<Appointment> appointmentsByDr = doctor.getAppointments();
-		return appointmentsByDr;
-	}*/
 	
 	@RequestMapping(value = "/doctors", method = RequestMethod.GET)
 	public List<Doctor> getAllDoctors(){
 		return this.dserv.getAllDoctors();
 	}
-	
-	@RequestMapping(value = "/doctors/{id}/patients", method = RequestMethod.GET)
-	public List<Patient> getAllPatientsByDoctor(@PathVariable int id) {
-		Doctor doctor = dserv.getDoctorById(id);
-		return this.dserv.getAllPatientsByDoctor(doctor);
-	}
-	
-	@RequestMapping(value = "/doctors", method = RequestMethod.PUT)
-	public Doctor updateDoctor(@RequestBody Doctor doctor) {
-		return this.dserv.updateDoctor(doctor);
-	}
-	
-	@RequestMapping(value = "/doctors/login", method = RequestMethod.POST)
-	public Doctor logInDoctor(@RequestBody LoginDTO ldto) {
-		return this.dserv.logIn(ldto);
-	}
-	
 	
 	
 

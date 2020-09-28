@@ -35,7 +35,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 		List<Appointment> appointments = (List<Appointment>) ar.findAll();
 		List<Appointment> doctorAppointments = new ArrayList<Appointment>();
 		for(Appointment app : appointments) {
-			if(app.getDoctor().getDid() == id) {
+			if(app.getDoctor().getNumber() == id) {
 				doctorAppointments.add(app);
 			}
 		}

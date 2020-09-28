@@ -8,15 +8,7 @@ import dev.four.entities.Patient;
 
 public interface DoctorService {
 	
-	Doctor createDoctor(Doctor doctor);
-	
-	Doctor getDoctorById(int id);
+	Doctor getDoctorByNumber(int number);
 	List<Doctor> getAllDoctors();
-	
-	Doctor updateDoctor(Doctor doctor);
-	
-	Doctor logIn(LoginDTO loginInfo);
-
-	List<Patient> getAllPatientsByDoctor(Doctor doctor);
 
 }
